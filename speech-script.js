@@ -38,7 +38,8 @@ document.body.onclick = () => {
   currInput = 0
   recognition.start();
   console.log("Ready to receive a chess command.");
-  
+  document.getElementById("debug").innerText+="Screen was clicked"
+  document.getElementById("debug").innerHTML+='<br>'
 };
 
 function loginUser(){
@@ -46,6 +47,7 @@ function loginUser(){
 }
 
 recognition.onresult = (event) => {
+    document.getElementById("debug").innerText+="received some input"
     var move = event.results[currInput][0].transcript;
     move = move.toLowerCase().replace(".","").trim()
 
@@ -59,6 +61,7 @@ recognition.onresult = (event) => {
       console.log(`Confidence: ${event.results[currInput][0].confidence}`);
     }
     currInput += 1
+     document.getElementById("debug").innerHTML+='<br>'
   };
 
 

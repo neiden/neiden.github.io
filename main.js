@@ -1,7 +1,4 @@
-console.log=function(){
-    var l=$("#debug");
-    l.html(l.html()+arguments[0]+' '+(arguments[1]?arguments[1]:'')+'<br>');
-};
+
 
 const lichessAPI = "https://lichess.org/api/";
 
@@ -68,12 +65,15 @@ async function makeMove(){
 
     if (response.error != null){
         sayPhrase("Unclear Move")
+        document.getElementById("debug").innerText+="unclear move"
     }
     else{
         sayPhrase("Successfully made move")
+        document.getElementById("debug").innerText+="Move successfully made"
     }
-
+    document.getElementById("debug").innerHTML+='<br>'
     console.log(response)
+    
 }
 
 function formatMoveUCI(){
