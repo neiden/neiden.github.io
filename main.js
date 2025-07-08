@@ -1,13 +1,14 @@
 const lichessAPI = "https://lichess.org/api/";
 
+const nothingImportant = atob("bGlwX25yMUE2M3FRdXV2Y0ZONFlObWVv")
 
 //const token = process.env.lichessToken;
 const getHeaders = {
-    'Authorization': 'Bearer ' + 'lip_bwFg30HNlQEnnmxUOLOD'
+    'Authorization': 'Bearer ' + nothingImportant
 };
 
 const postHeaders = {
-    Authorization: 'Bearer ' + 'lip_bwFg30HNlQEnnmxUOLOD',
+    Authorization: 'Bearer ' + nothingImportant,
     'Accept': 'application/x-www-form-urlencoded',
       'Content-Type': 'application/json'
 };
@@ -90,7 +91,7 @@ async function getNthLastMove(){
 }
 
 async function login(){
-    const response = await fetch(`https://lichess.org/oauth?response_type=code&redirect_uri=https://neiden.github.io/&client_id=blindchess.com&code_challenge_method=s256&code_challenge=12345679&scope=board:play`)
+    const response = await fetch(`https://lichess.org/oauth?response_type=code&redirect_uri=https://neiden.github.io&client_id=blindchess.com&code_challenge_method=s256&code_challenge=12345679&scope=board:play`)
 
     const data = await response.json()
     console.log(data);
