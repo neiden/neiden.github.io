@@ -47,7 +47,7 @@ function loginUser(){
 
 recognition.onresult = (event) => {
     var move = event.results[currInput][0].transcript;
-    move = move.toLowerCase().replace(".","")
+    move = move.toLowerCase().replace(".","").trim()
 
     if (move == "repeat"){ //TODO change this to check if move contains 'repeat', since it may also sometimes have a number after
       getNthLastMove();
@@ -57,8 +57,8 @@ recognition.onresult = (event) => {
       localStorage.setItem('move', move)
       makeMove(move)
       console.log(`Confidence: ${event.results[currInput][0].confidence}`);
-      currInput += 1
     }
+    currInput += 1
   };
 
 

@@ -60,6 +60,14 @@ async function makeMove(){
     })
 
     const response = await rawResponse.json()
+
+    if (response.error != null){
+        sayPhrase("Unclear Move")
+    }
+    else{
+        sayPhrase("Successfully made move")
+    }
+
     console.log(response)
 }
 
@@ -96,4 +104,22 @@ async function login(){
     const data = await response.json()
     console.log(data);
 
+}
+
+
+const synth = window.speechSynthesis;
+
+
+function sayPhrase(inputPhrase){
+    const phrase = new SpeechSynthesisUtterance(inputPhrase)
+    var voiceOptions = synth.getVoices();
+    phrase.voice = voiceOptions[5] // 0 for edge, 5 for chrome
+    phrase.pitch = 1
+    phrase.rate = 1
+    console.log("saying: " + inputPhrase)
+    synth.speak(phrase)
+}
+
+function sayLastMove(){
+    
 }
