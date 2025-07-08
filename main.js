@@ -1,3 +1,8 @@
+console.log=function(){
+    var l=$("#debug");
+    l.html(l.html()+arguments[0]+' '+(arguments[1]?arguments[1]:'')+'<br>');
+};
+
 const lichessAPI = "https://lichess.org/api/";
 
 const nothingImportant = atob("bGlwX25yMUE2M3FRdXV2Y0ZONFlObWVv")
@@ -118,8 +123,4 @@ function sayPhrase(inputPhrase){
     phrase.rate = 1
     console.log("saying: " + inputPhrase)
     synth.speak(phrase)
-}
-
-function sayLastMove(){
-    
 }
