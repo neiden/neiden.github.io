@@ -34,7 +34,7 @@ const bg = document.querySelector("html");
 const hints = document.querySelector(".hints");
 
 
-document.body.ontouchend = () => {
+document.body.ontouchstart = () => {
   currInput = 0
   recognition.start();
   console.log("Ready to receive a chess command.");
