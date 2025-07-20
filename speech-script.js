@@ -34,7 +34,7 @@ const bg = document.querySelector("html");
 const hints = document.querySelector(".hints");
 
 
-document.body.onclick = () => {
+document.body.ontouchend = () => {
   currInput = 0
   recognition.start();
   console.log("Ready to receive a chess command.");
@@ -65,12 +65,12 @@ recognition.onresult = (event) => {
   };
 
 
-
   recognition.onspeechend = async () => {
     // recognition.stop();
     // await new Promise(r => setTimeout(r, 100))
     // recognition.start();
   };
+
 
 
 
