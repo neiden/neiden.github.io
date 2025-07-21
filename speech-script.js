@@ -42,6 +42,14 @@ document.body.ontouchstart = () => {
   document.getElementById("debug").innerHTML+='<br>'
 };
 
+function start(){
+  currInput = 0
+  recognition.start();
+  console.log("Ready to receive a chess command.");
+  document.getElementById("debug").innerText+="Screen was clicked"
+  document.getElementById("debug").innerHTML+='<br>'
+}
+
 function loginUser(){
   this.auth.login();
 }
