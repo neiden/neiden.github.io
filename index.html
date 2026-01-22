@@ -1,6 +1,13 @@
-<h1>Click screen to say chess command</h1>
-<div>
-  <p class="output"><em>…diagnostic messages</em></p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Chat Chess</title>
+</head>
+
+<h1>Chat Chess</h1>
+<p>Login to your Lichess account or play as a guest. Works best with headphones.</p>
+<div id="main-content">
   <button id="startGame" onclick="startGame()">Start Game</button>
   <button onclick="streamCurrentGame()">View Game Status</button>
   <button onclick="makeMove()">Make Move</button>
@@ -8,9 +15,11 @@
   <button onclick="login()">Login</button>
   <button onclick="start()">Start Listening</button>
   <br>
-  <label>Debug Output</label>
-  <p id="debug"></p>
 </div>
+
+<p class="output"><em>…diagnostic messages</em></p>
+<label>Debug Output</label>
+<p id="debug"></p>
 
 
 <script src="main.js"></script>

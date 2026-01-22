@@ -1,0 +1,38 @@
+
+#main-content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  background-color: lightslategray;
+}
+
+#main-content button {
+  padding: .5em;
+  margin: .5em;
+  width: 7em;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("wallpaper.png");
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+
+@media (max-width: 768px) {
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("mobileWallpaper2.png");
+    background-repeat: repeat;  
+  }
+}
