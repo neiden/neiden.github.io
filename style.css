@@ -34,5 +34,6 @@ body {
     align-items: center;
     background-image: url("mobileWallpaper2.png");
     background-repeat: repeat;  
+    background-size: cover;
   }
 }
