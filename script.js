@@ -81,6 +81,8 @@ const leftDownImg = new Image();
 const rightUpImg = new Image();
 const rightDownImg = new Image();
 
+var test = "test";
+
 aUpImg.src = './assets/ui/aUp3.png';
 aDownImg.src = './assets/ui/aDown.png';
 
