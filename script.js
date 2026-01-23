@@ -39,6 +39,8 @@ const bgLayer2 = new Image();
 const bgLayer3 = new Image();
 const bgLayer4 = new Image();
 
+
+
 const experiencePlaqueImg = new Image();
 //512, 768
 const experiencePlaqueOrigin = [1700, -60];
@@ -70,7 +72,19 @@ img.addEventListener("load",    () => {
 },
 "false",);
 
+const aUpImg = new Image();
+const aDownImg = new Image();
+const bUpImg = new Image();
+const bDownImg = new Image();
+const leftUpImg = new Image();
+const leftDownImg = new Image();
+const rightUpImg = new Image();
+const rightDownImg = new Image();
 
+aUpImg.src = './assets/ui/aUp3.png';
+aDownImg.src = './assets/ui/aDown.png';
+
+var aButton = new GameObject(ctx, window.innerWidth - 200, window.innerHeight - 200, 500,  500, aUpImg, 0, 0);
 
 function respawn(){
   player.xVel = 0
@@ -137,7 +151,13 @@ function tick(){
     //console.log(keydown, player.state, player);
     //Inputs
     player.input(keydown);
-
+    
+    if (keydown['right']){
+      aButton.img = aDownImg;
+    }
+    else{
+      aButton.img = aUpImg;
+    }
     //Update
     if(Math.abs(player.xVel) > .0015){
         player.xVel *= .85;
@@ -243,7 +263,7 @@ function tick(){
         tileMap.render(ctx);
         assets.forEach((asset) => asset.render());
         player.render();
-
+        aButton.render();
  
         if (debugMode){
           ctx.beginPath(); 
